@@ -1,0 +1,37 @@
+name: Publish resume PDF
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install RenderCV
+        run: pip install "rendercv[full]==2.8"
+
+      - name: Render PDF
+        run: rendercv render Samuel_Mohr_CV.yaml
+
+      - name: Publish rolling release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete resume-pdf --yes --cleanup-tag || true
+          gh release create resume-pdf rendercv_output/Samuel_Mohr_CV.pdf \
+            --title "Resume PDF" \
+            --notes "Auto-generated from Samuel_Mohr_CV.yaml on $(date -u +%F)" \
+            --latest
