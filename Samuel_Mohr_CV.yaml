@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
 cv:
   name: Samuel Mohr
-  headline: Senior Software Engineer · Boston, MA
+  headline: Senior Software Engineer • Boston, MA
   location:
   email: sam@sammohr.dev
   phone: "+1-404-775-1184"
@@ -94,6 +94,7 @@ cv:
       - Maintained [Roc](https://www.roc-lang.org/), a functional language focused on safety, runtime + compilation speed
       - Contributing to the [Maki](https://github.com/tontinton/maki) agent harness, a Rust-based Neovim-like TUI focused on performance and extensibility
       - Designed and sold 50+ sub-40% ergonomic keyboards at [smoresboards.com](https://smoresboards.com/)
+      - Tenor in nationally-recognized barbershop choirs (Seattle, Atlanta, Georgia Tech)
 design:
   theme: sb2nov
   page:
@@ -118,7 +119,7 @@ design:
     space_above: 0.25cm
     space_below: 0.12cm
   sections:
-    space_between_regular_entries: 0.15cm
+    space_between_regular_entries: 0.1cm
     space_between_text_based_entries: 0.06cm
 locale:
   language: english
