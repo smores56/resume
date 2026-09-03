@@ -44,7 +44,7 @@ jobs:
           GH_TOKEN: ${{ secrets.SITE_DEPLOY_TOKEN }}
         run: |
           if [ -n "$GH_TOKEN" ]; then
-            gh workflow_dispatch deploy-to-gh-pages.yml -R smores56/personal-site --ref main
+            gh workflow run deploy-to-gh-pages.yml -R smores56/personal-site --ref main
           else
             echo "::error::SITE_DEPLOY_TOKEN secret is not set; personal-site will not redeploy"
             exit 1
