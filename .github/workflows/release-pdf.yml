@@ -35,3 +35,17 @@ jobs:
             --title "Resume PDF" \
             --notes "Auto-generated from samuel-mohr-resume.yaml on $(date -u +%F)" \
             --latest
+
+      # Redeploy personal-site so the new PDF is served at sammohr.dev.
+      # Requires SITE_DEPLOY_TOKEN (fine-grained PAT, Actions write on
+      # smores56/personal-site) — see personal-site README for setup/rotation.
+      - name: Trigger personal-site deployment
+        env:
+          GH_TOKEN: ${{ secrets.SITE_DEPLOY_TOKEN }}
+        run: |
+          if [ -n "$GH_TOKEN" ]; then
+            gh workflow_dispatch deploy-to-gh-pages.yml -R smores56/personal-site --ref main
+          else
+            echo "::error::SITE_DEPLOY_TOKEN secret is not set; personal-site will not redeploy"
+            exit 1
+          fi
