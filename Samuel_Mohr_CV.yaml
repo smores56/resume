@@ -1,8 +1,8 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
 cv:
   name: Samuel Mohr
-  headline: Senior Software Engineer
-  location: Boston, MA
+  headline: Senior Software Engineer, Boston, MA
+  location:
   email: sam@sammohr.dev
   phone: "+1-404-775-1184"
   website: https://sammohr.dev
@@ -13,18 +13,18 @@ cv:
       username: samuel-mohr
   sections:
     experience:
-      # TODO(sam): 7AI role content — title, location, 2-4 highlight bullets
       - company: 7AI
         position: Senior Software Engineer
         start_date: 2025-09
         end_date: 2026-09
         location: Boston, MA
         highlights:
-          - Owned the 7QL programming language, a multiplexing query transpiler for allowing AI agents to use a single query language to fan out across dozens of target datastore languages
-          - Scaffolded the 7AI SIEM, a fully modular, polylingual storage system written in Rust that allows users to provide their own storage backends to minimize cost and barriers to entry for migration
+          - Owned the 7QL multiplexing query transpiler used by AI agents and security engineers across 20+ datastore backends
+          - Productionized the 7AI SIEM from a 300k-line Rust prototype to AWS, querying billions of security events per day
+          - Owned SIEM SQL, the dialect powering every in-house alert detection, transpiled via DataFusion across storage backends
           - Delivered agentic federated search, an agent-driven chat tool for interactive exploration of customer data that fed into automated alert detections
-          - Led a pilot program for open-source coding models (GLM at Cloudflare and Baseten), projecting $1M+ in annual savings for agentic coding
-          - Onboarded and instructed engineers and non-engineers about agentic development and cost reduction while maintaining feature quality
+          - Piloted open-source coding models (GLM at Cloudflare, Baseten), projecting $1M+ in annual savings for agentic coding
+          - Owned DX for all code writers, shipping mise-based, agent-integrated dev environments, and onboarded engineers on agentic development
       - company: Flexport
         position: Software Development Engineer II
         start_date: 2023-07
@@ -35,6 +35,8 @@ cv:
           - Reduced latency from 8 hrs to 3 mins with algorithmically-efficient approach for 80% of company's client claims
           - Improved drawback claim totals by 15-30% for various provisions, earning $1M+ extra commission for single claim
           - Developed new Kotlin event processing service for recording historic costs for use in future pricing estimation
+          - Modeled new cost history service around real-time Datadog dashboard reporting for instant data loss triage
+          - Kicked off deprecation of prior broken service + moving behavior to new service to avoid constant KTLO work
       - company: Amazon Web Services
         position: Software Development Engineer I
         start_date: 2022-01
@@ -45,6 +47,8 @@ cv:
           - Developed FuseFS, a Rust-based FUSE/UFFD filesystem, along with TypeScript/Kotlin/Go microservices
           - Architected full CD, continuous end-to-end canary latency testing system for full AWS Lambda invoke stack
           - Improved P99 cold start invoke latency by 20% by proactively fetching more data for all Lambda functions
+          - Optimized service performance using Criterion, flamegraph, IO benchmarking, other A/B testing methods
+          - Acted as rotating on-call for mitigating team service issues and deployment for major AWS Lambda services
           - Mentored team members and others on best practices of programming in Rust; mentored junior devs broadly
       - company: ABB
         position: Research and Development Engineer
@@ -52,7 +56,7 @@ cv:
         end_date: 2021-12
         location: Atlanta, GA
         highlights:
-          - Prototyped and developed the Common Data Layer, a backend-agnostic storage system in Rust
+          - Prototyped and developed the Common Data Layer, a backend-agnostic Rust storage system abstracting PSQL, Sled, and Apache Druid
           - Wrote proposals as RFC's, moderated discussion, and implemented proposed features into services
           - Improved throughput of internal storage system more than 20 fold by transitioning to parallel/async behavior
       - company: NCR
@@ -61,13 +65,24 @@ cv:
         end_date: 2020-03
         location: Atlanta, GA
         highlights:
+          - Added and tested new features for both Spring Boot JSON API and Angular/TypeScript with RxJS website
           - Reworked over half of a 3 team codebase in 1.5 months to add unified state management to frontend
+    skills:
+      - label: Programming Languages
+        details: Rust, Python, TypeScript, Kotlin, Go, Ruby, Java, Zig, Elm, C, CSS, HTML
+      - label: Communication Protocols
+        details: REST, GraphQL, protobuf, gRPC, Kafka, Kinesis, SQS, Websockets
+      - label: Development Tooling
+        details: Travis CI, Kubernetes, Docker, Git (GitHub and Bitbucket), Jira
+      - label: Frameworks
+        details: React, Arrow, jOOQ, Koin, Angular, Svelte, Axum, Actix Web, Warp, Bulma CSS
     education:
       - institution: Georgia Institute of Technology
         area: Computer Science
         degree: Master of Science
         end_date: 2023-12
         location: Atlanta, GA
+        highlights:
       - institution: Georgia Institute of Technology
         area: Computer Science
         degree: Bachelor of Science
@@ -75,43 +90,26 @@ cv:
         location: Atlanta, GA
         highlights:
           - Graduated with Highest Honors
-    skills:
-      - label: Programming Languages
-        details: Rust, Python, TypeScript, Kotlin, Go, Java, Zig, C, HTML/CSS
-      - label: Communication Protocols
-        details: REST, GraphQL, protobuf, gRPC, Kafka, Kinesis, SQS, WebSockets
-      - label: Development Tooling
-        details: Kubernetes, Docker, Git, Jira
-      - label: Frameworks
-        details: React, Svelte, Angular, Axum, Actix Web, Warp
-    Projects:
-      - name: '[Roc](https://www.roc-lang.org/)'
-        highlights:
-          - Maintainer for the upcoming Roc functional-but-friendly language focused on safety, runtime + compilation speed
-          - Orchestrated rewrite of Roc language core from Rust to Zig to coordinate parallel development of compiler stages
-      - name: '[smoresboards](https://smoresboards.com/)'
-        highlights:
-          - Designed and sold 50+ sub-40% ergonomic keyboards to reduce typing strain
+          - 'Notable Coursework: Compilers and Interpreters, Operating Systems, Systems and Networks'
+    Projects & Interests:
+      - Maintained [Roc](https://www.roc-lang.org/), a functional language focused on safety, runtime + compilation speed
+      - Contributing to the [Maki](https://github.com/tontinton/maki) agent harness, a Rust-based Neovim-like TUI that is performant and extensible
+      - Designed and sold 50+ sub-40% ergonomic keyboards at [smoresboards.com](https://smoresboards.com/)
 design:
-  theme: engineeringresumes
+  theme: sb2nov
   page:
-    top_margin: 0.32in
-    bottom_margin: 0.32in
+    show_footer: false
+    top_margin: 0.35in
+    bottom_margin: 0.35in
     left_margin: 0.4in
     right_margin: 0.4in
-  header:
-    space_below_name: 0.35cm
-    space_below_headline: 0.25cm
-    space_below_connections: 0.3cm
-  section_titles:
-    space_above: 0.22cm
-    space_below: 0.13cm
-  sections:
-    space_between_regular_entries: 0.12cm
-    space_between_text_based_entries: 0.08cm
   typography:
     font_size:
-      body: 9.3pt
+      body: 8pt
+      name: 20pt
+      headline: 8.5pt
+      connections: 8.5pt
+      section_titles: 1.1em
 locale:
   language: english
 settings:
