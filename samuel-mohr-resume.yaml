@@ -23,7 +23,7 @@ cv:
           - Productionized the 7AI SIEM from a 300k-line Rust prototype to AWS, querying billions of security events per day
           - Owned SIEM SQL, the dialect powering every in-house alert detection, transpiled via DataFusion across storage backends
           - Delivered federated search, an agent-driven chat tool for interactive data exploration to aid automated alert detection
-          - Owned DX for all code writers, shipping mise-based agent-integrated dev environments, owned onboarding
+          - Owned DX for all code writers, shipping mise-based agent-integrated dev environments, including onboarding
           - Piloted open-source model dev program (GLM family), projected $1M+ in annual savings for agentic coding
           - Acted as rotating on-call for platform-wide service issues and deployments
       - company: Flexport
