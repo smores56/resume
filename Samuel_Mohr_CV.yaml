@@ -1,0 +1,129 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
+cv:
+  name: Samuel Mohr
+  headline: Full Stack Software Engineer
+  location:
+  email: sam@sammohr.dev
+  phone: "+1-404-775-1184"
+  website: https://sammohr.dev
+  social_networks:
+    - network: GitHub
+      username: smores56
+  sections:
+    Summary:
+      - >-
+          Full stack software engineer with 7+ years of industry development
+          experience. Excellent communication skills, strong experience
+          collaboratively architecting solutions. Detail-oriented with high
+          standards for code quality, design, and performance. Proficient in
+          Rust, Python, TypeScript, and Kotlin, knowledge of multiple
+          frontend/backend web frameworks.
+    experience:
+      # TODO(sam): 7AI role content — title, location, 2-4 highlight bullets
+      - company: 7AI
+        position: TODO position title
+        start_date: 2025-09
+        end_date: 2026-09
+        location:
+        highlights:
+          - TODO highlight 1
+          - TODO highlight 2
+      - company: Flexport
+        position: Software Development Engineer II
+        start_date: 2023-07
+        end_date: 2025-08
+        location: Seattle, WA
+        highlights:
+          - Created Duty Drawback ("import tax returns") service with React frontend + Rust backend in startup-style team
+          - Reduced latency from 8 hrs to 3 mins with algorithmically-efficient approach for 80% of company's client claims
+          - Improved drawback claim totals by 15-30% for various provisions, earning $1M+ extra commission for single claim
+          - Developed new Kotlin event processing service for recording historic costs for use in future pricing estimation
+          - Modeled new cost history service around real-time Datadog dashboard reporting for instant data loss triage
+          - Kicked off deprecation of prior broken service + moving behavior to new service to avoid constant KTLO work
+          - Developed a plan to cleanly deprecate historical service to streamline processing of company-wide cost data
+      - company: Amazon Web Services
+        position: Software Development Engineer I
+        start_date: 2022-01
+        end_date: 2023-06
+        location: Seattle, WA
+        highlights:
+          - Contributed to AWS Lambda's SnapStart, a feature to reduce cold-start time for serverless invokes
+          - Developed FuseFS, a Rust-based FUSE/UFFD filesystem, along with TypeScript/Kotlin/Go microservices
+          - Architected full CD, continuous end-to-end canary latency testing system for full AWS Lambda invoke stack
+          - Automated visibility on end-to-end Lambda latency drops to within 15 minutes of regression introduction
+          - Improved P99 cold start invoke latency by 20% by proactively fetching more data for all Lambda functions
+          - Optimized service performance using Criterion, flamegraph, IO benchmarking, other A/B testing methods
+          - Acted as rotating on-call for mitigating team service issues and deployment for major AWS Lambda services
+          - Mentored team members and others on best practices of programming in Rust; mentored junior devs broadly
+      - company: ABB
+        position: Research and Development Engineer
+        start_date: 2020-03
+        end_date: 2021-12
+        location: Atlanta, GA
+        highlights:
+          - Prototyped and developed the Common Data Layer, a backend-agnostic storage system in Rust
+          - Designed microservices to abstract over myriad databases, including PSQL, Sled, Apache Druid
+          - Wrote proposals as RFC's, moderated discussion, and implemented proposed features into services
+          - Improved throughput of internal storage system more than 20 fold by transitioning to parallel/async behavior
+          - Interviewed over 20 candidates for Rust, Golang, and React.JS positions
+      - company: NCR
+        position: Full-Stack Developer
+        start_date: 2019-07
+        end_date: 2020-03
+        location: Atlanta, GA
+        highlights:
+          - Added and tested new features for both Spring Boot JSON API and Angular/TypeScript with RxJS website
+          - Reworked over half of a 3 team codebase in 1.5 months to add unified state management to frontend
+          - Audited documentation and educated current/new team members on how to maintain code integrity
+    education:
+      - institution: Georgia Institute of Technology
+        area: Computer Science
+        degree: Master of Science
+        end_date: 2023-12
+        location: Atlanta, GA
+        highlights:
+          - Focused in Computing Systems
+      - institution: Georgia Institute of Technology
+        area: Computer Science
+        degree: Bachelor of Science
+        end_date: 2019-05
+        location: Atlanta, GA
+        highlights:
+          - Graduated with Highest Honors
+          - Focused in Systems/Architecture and Intelligence
+          - 'Notable Coursework: Compilers and Interpreters, Operating Systems, Systems and Networks'
+    skills:
+      - label: Programming Languages
+        details: Rust, Python, TypeScript, Kotlin, Go, Ruby, Java, Zig, Elm, C, CSS, HTML
+      - label: Communication Protocols
+        details: REST, GraphQL, protobuf, gRPC, Kafka, Kinesis, SQS, Websockets
+      - label: Development Tooling
+        details: Travis CI, Kubernetes, Docker, Git (GitHub and Bitbucket), Jira
+      - label: Frameworks
+        details: React, Arrow, jOOQ, Koin, Angular, Svelte, Axum, Actix Web, Warp, Bulma CSS
+    Projects:
+      - name: '[Roc](https://www.roc-lang.org/)'
+        summary: Open-source functional programming language
+        highlights:
+          - Maintainer for the upcoming Roc functional-but-friendly language focused on safety, runtime + compilation speed
+          - Orchestrated rewrite of Roc language core from Rust to Zig to coordinate parallel development of compiler stages
+      - name: '[smoresboards](https://smoresboards.com/)'
+        highlights:
+          - Designed and sold over 50 sub-40% ergonomic keyboards to reduce typing strain
+    Interests:
+      - Tenor singer in multiple nationally-recognized barbershop choirs (Seattle, Atlanta, Georgia Tech)
+design:
+  theme: engineeringresumes
+locale:
+  language: english
+settings:
+  current_date: today
+  render_command:
+    output_folder: rendercv_output
+    dont_generate_markdown: false
+    dont_generate_html: false
+    dont_generate_typst: false
+    dont_generate_pdf: false
+    dont_generate_png: false
+  bold_keywords: []
+  pdf_title: Samuel Mohr - CV
