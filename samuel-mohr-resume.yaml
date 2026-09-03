@@ -127,6 +127,11 @@ settings:
   current_date: today
   render_command:
     output_folder: rendercv_output
+    pdf_path: OUTPUT_FOLDER/samuel-mohr-resume.pdf
+    typst_path: OUTPUT_FOLDER/samuel-mohr-resume.typ
+    markdown_path: OUTPUT_FOLDER/samuel-mohr-resume.md
+    html_path: OUTPUT_FOLDER/samuel-mohr-resume.html
+    png_path: OUTPUT_FOLDER/samuel-mohr-resume.png
     dont_generate_markdown: false
     dont_generate_html: false
     dont_generate_typst: false

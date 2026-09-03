@@ -24,14 +24,14 @@ jobs:
         run: pip install "rendercv[full]==2.8"
 
       - name: Render PDF
-        run: rendercv render Samuel_Mohr_CV.yaml
+        run: rendercv render samuel-mohr-resume.yaml
 
       - name: Publish rolling release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release delete resume-pdf --yes --cleanup-tag || true
-          gh release create resume-pdf rendercv_output/Samuel_Mohr_CV.pdf \
+          gh release create resume-pdf rendercv_output/samuel-mohr-resume.pdf \
             --title "Resume PDF" \
-            --notes "Auto-generated from Samuel_Mohr_CV.yaml on $(date -u +%F)" \
+            --notes "Auto-generated from samuel-mohr-resume.yaml on $(date -u +%F)" \
             --latest
