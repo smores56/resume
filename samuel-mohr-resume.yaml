@@ -16,7 +16,7 @@ cv:
       - company: 7AI
         position: Senior Software Engineer
         start_date: 2025-09
-        end_date: 2026-09
+        end_date: present
         location: Boston, MA
         highlights:
           - Owned the 7QL multiplexing query transpiler used by AI agents and security engineers across 20+ datastore backends
